@@ -23,6 +23,10 @@ class AuthController extends Controller
 
             if (Auth::user()->role === 'admin') {
                 return redirect()->route('admin.dashboard');
+            } elseif (Auth::check()) {
+                // Tambahkan log ini untuk memastikan bahwa kode sampai di sini
+                Log::info('User logged in, redirecting to user.home');
+                return redirect()->route('user.home');
             }
 
             return redirect()->route('user.home');
