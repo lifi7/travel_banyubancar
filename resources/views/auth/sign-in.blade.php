@@ -36,6 +36,8 @@
   <!-- Nepcha Analytics (nepcha.com) -->
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+  <style>
+    </style>
 </head>
 
 <body class="">
@@ -83,22 +85,17 @@
                   <p class="mb-0">Enter your email and password to sign in</p>
                 </div>
                 <div class="card-body">
-                  <form role="form">
-                    <label>Email</label>
+                  <form method="POST" action="{{ route('login') }}">
+                    @csrf
                     <div class="mb-3">
-                      <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
+                        <label>Email</label>
+                        <input type="email" name="email" class="form-control" required>
                     </div>
-                    <label>Password</label>
                     <div class="mb-3">
-                      <input type="email" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
+                        <label>Password</label>
+                        <input type="password" name="password" class="form-control" required>
                     </div>
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
-                      <label class="form-check-label" for="rememberMe">Remember me</label>
-                    </div>
-                    <div class="text-center">
-                      <button type="button" class="btn bg-gradient-info w-100 mt-4 mb-0">Sign in</button>
-                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
                   </form>
                 </div>
                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
