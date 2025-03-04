@@ -43,7 +43,13 @@
   --background-color: #f5f6f8;
   --surface-color: #ffffff;
 }
-
+.btnprimary{
+  background-color: #47b2e4;
+  border: none;
+}
+.btnprimary:hover{
+background-color: #106694;
+}
 .dark-background {
   --background-color: #106694;
   --default-color: #ffffff;
