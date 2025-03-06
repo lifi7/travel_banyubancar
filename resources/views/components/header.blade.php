@@ -22,14 +22,11 @@
                 </a>
             </li>
             <li>
-                <a href="{{ url('/berita') }}" class="{{ Request::is('berita') ? 'active' : '' }}">
-                    Berita
+                <a href="{{ url('/profil') }}" class="{{ Request::is('profil') ? 'active' : '' }}">
+                    Profile
                 </a>
             </li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
-
-
-    <a class="btn-getstarted" href="{{ url('/profil') }}">Profile</a>
 </div>

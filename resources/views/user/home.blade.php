@@ -56,7 +56,7 @@
                         <h1>Best For Your Trip!</h1>
                         <p>We are team of talented designers making websites with Bootstrap</p>
                         <div class="d-flex">
-                          <a href="{{ route('login') }}" class="btn-get-started">Pesan Sekarang</a>
+                          <a href="{{ route('pemesanan') }}" class="btn-get-started">Pesan Sekarang</a>
                       </div>                      
                     </div>
                     <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">

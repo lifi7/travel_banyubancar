@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProfileController;
 
 
 Route::get('/sign-up', [AuthController::class, 'showSignUpForm'])->name('signup');
@@ -19,7 +20,7 @@ Route::get('/home', function () {
 
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
-})->middleware(['auth', 'admin'])->name('admin.dashboard');
+})->name('admin.dashboard');
 
 Route::get('/', function () {
     return view('landing_page');
@@ -37,21 +38,21 @@ Route::get('/admin/rtl', function () {
     return view('admin.rtl');
 });
 
-Route::get('/sign-in', function () {
-    return view('auth.sign-in');
-})->name('login');
+// Route::get('/sign-in', function () {
+//     return view('auth.sign-in');
+// })->name('login');
 
-Route::get('/sign-up', function () {
-    return view('auth.sign-up');
-});
+// Route::get('/sign-up', function () {
+//     return view('auth.sign-up');
+// });
 
-Route::get('/home', function () {
-    return view('user.home');
-});
+// Route::get('/home', function () {
+//     return view('user.home');
+// });
 
 Route::get('/pemesanan', function () {
     return view('user.pemesanan');
-});
+})->name('pemesanan');
 
 Route::get('/riwayat pemesanan', function () {
     return view('user.riwayat_pemesanan');
@@ -86,14 +87,9 @@ Route::get('/profil', function () {
     ]);
 });
 
-Route::get('/profil/edit', function () {
-    return view('user.edit_profil');
-});
-
-Route::post('/profil/update', function () {
-    return redirect('/profil')->with('success', 'Profil berhasil diperbarui!');
-});
-
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+    Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+    Route::put('/profile/password', [ProfileController::class, 'changePassword'])->name('profile.password');
 
 
 

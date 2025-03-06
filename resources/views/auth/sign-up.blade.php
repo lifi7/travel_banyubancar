@@ -9,40 +9,54 @@
     <title>
         Soft UI Dashboard 3 by Creative Tim
     </title>
+    <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,800" rel="stylesheet" />
+    <!-- Nucleo Icons -->
     <link href="https://demos.creative-tim.com/soft-ui-dashboard/assets/css/nucleo-icons.css" rel="stylesheet" />
     <link href="https://demos.creative-tim.com/soft-ui-dashboard/assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <!-- CSS Files -->
     <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.1.0" rel="stylesheet" />
+    <link href="assets/css/main.css" rel="stylesheet">
+    <!-- Nepcha Analytics (nepcha.com) -->
+    <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
     <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
 </head>
 
 <body class="">
-    <!-- Navbar -->
-    <header id="header" class="header d-flex align-items-center fixed-top">
-        <div class="container-fluid container-xl position-relative d-flex align-items-center">
+    <div class="container position-sticky z-index-sticky top-0">
+        <div class="row">
+            <div class="col-12">
+                <!-- Navbar -->
+                <header id="header" class="header d-flex align-items-center fixed-top">
+                    <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-            <a href="index.html" class="logo d-flex align-items-center me-auto">
-                <!-- Uncomment the line below if you also wish to use an image logo -->
-                <!-- <img src="assets/img/logo.png" alt=""> -->
-                <h1 class="sitename">Arsha</h1>
-            </a>
+                        <a href="index.html" class="logo d-flex align-items-center me-auto">
+                            <!-- Uncomment the line below if you also wish to use an image logo -->
+                            <!-- <img src="assets/img/logo.png" alt=""> -->
+                            <h1 class="sitename">Arsha</h1>
+                        </a>
 
-            <nav id="navmenu" class="navmenu">
-                <ul>
-                    <li><a href="#hero" class="active">Beranda</a></li>
-                    <li><a href="#about">Tentang Kami</a></li>
-                    <li><a href="#services">Cara Pemesanan</a></li>
-                    <li><a href="#team">Driver</a></li>
-                    <li><a href="#pricing">Jadwal Perjalanan</a></li>
-                </ul>
-                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-            </nav>
+                        <nav id="navmenu" class="navmenu">
+                            <ul>
+                                <li><a href="#hero" class="active">Beranda</a></li>
+                                <li><a href="#about">Tentang Kami</a></li>
+                                <li><a href="#services">Cara Pemesanan</a></li>
+                                <li><a href="#team">Driver</a></li>
+                                <li><a href="#pricing">Jadwal Perjalanan</a></li>
+                            </ul>
+                            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                        </nav>
 
-            <a class="btn-getstarted" href="#about">Get Started</a>
+                        <a class="btn-getstarted" href="#about">Get Started</a>
 
+                    </div>
+                </header>
+                <!-- End Navbar -->
+            </div>
         </div>
-    </header>
+    </div>
     <main class="main-content  mt-0">
         <section class="min-vh-100 mb-8">
             <div class="page-header align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg"
@@ -51,9 +65,8 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-5 text-center mx-auto">
-                            <h1 class="text-white mb-2 mt-5">Welcome!</h1>
-                            <p class="text-lead text-white">Use these awesome forms to login or create new account in
-                                your project for free.</p>
+                            <h1 class="text-white mb-2 mt-5">Selamat Datang!</h1>
+                            <p class="text-lead text-white">Travel Banyu Bancar</p>
                         </div>
                     </div>
                 </div>
@@ -63,7 +76,7 @@
                     <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
                         <div class="card z-index-0">
                             <div class="card-header text-center pt-4">
-                                <h5>Register with</h5>
+                                <h5>Daftar Dengan</h5>
                             </div>
                             <div class="row px-xl-5 px-sm-4 px-3">
                                 <div class="col-3 ms-auto px-1">
@@ -139,7 +152,7 @@
                                 <form method="POST" action="{{ route('signup.submit') }}">
                                     @csrf <!-- CSRF Token -->
                                     <div class="mb-3">
-                                        <input type="text" class="form-control" placeholder="Name" name="name"
+                                        <input type="text" class="form-control" placeholder="Nama" name="name"
                                             required>
                                     </div>
                                     <div class="mb-3">
@@ -147,28 +160,26 @@
                                             name="email" autocomplete="on" required>
                                     </div>
                                     <div class="mb-3">
-                                        <input type="password" class="form-control" placeholder="Password"
+                                        <input type="password" class="form-control" placeholder="Kata Sandi"
                                             name="password" autocomplete="off" required>
                                     </div>
                                     <div class="mb-3">
-                                        <input type="password" class="form-control" placeholder="Confirm Password"
-                                            name="password_confirmation" autocomplete="off" required>
+                                        <input type="password" class="form-control" placeholder="Konfirmasi Kata Sandi"
+                                            name="konfirmasi_password" autocomplete="off" required>
                                     </div>
                                     <div class="form-check form-check-info text-left">
                                         <input class="form-check-input" type="checkbox" id="flexCheckDefault"
                                             required>
                                         <label class="form-check-label" for="flexCheckDefault">
-                                            I agree the <a href="javascript:;"
-                                                class="text-dark font-weight-bolder">Terms and Conditions</a>
+                                            Saya Setuju dengan <a href="javascript:;"
+                                                class="text-dark font-weight-bolder">Syarat dan Ketentuan</a>
                                         </label>
                                     </div>
                                     <div class="text-center">
-                                        <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign
-                                            up</button>
+                                        <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Daftar</button>
                                     </div>
-                                    <p class="text-sm mt-3 mb-0">Already have an account? <a
-                                            href="{{ route('login') }}" class="text-dark font-weight-bolder">Sign
-                                            in</a></p>
+                                    <p class="text-sm mt-3 mb-0">Sudah Punya Akun? <a
+                                            href="{{ route('login') }}" class="text-dark font-weight-bolder">Masuk</a></p>
                                 </form>
                             </div>
                         </div>
@@ -179,26 +190,6 @@
         <footer class="footer py-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 mb-4 mx-auto text-center">
-                        <a href="javascript:;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
-                            Company
-                        </a>
-                        <a href="javascript:;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
-                            About Us
-                        </a>
-                        <a href="javascript:;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
-                            Team
-                        </a>
-                        <a href="javascript:;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
-                            Products
-                        </a>
-                        <a href="javascript:;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
-                            Blog
-                        </a>
-                        <a href="javascript:;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
-                            Pricing
-                        </a>
-                    </div>
                     <div class="col-lg-8 mx-auto text-center mb-4 mt-2">
                         <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
                             <span class="text-lg fab fa-dribbble"></span>
@@ -223,7 +214,7 @@
                             Copyright ©
                             <script>
                                 document.write(new Date().getFullYear())
-                            </script> Soft by Creative Tim.
+                            </script> by TravelBanyuBancar.
                         </p>
                     </div>
                 </div>

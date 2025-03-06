@@ -64,37 +64,196 @@
         <x-header />
       </header>
 
-      <main class="main">
-        <div class="profile-container">
-            <div class="profile-header">
-                <img src="{{asset('assets/img/pp.jpeg') }}" alt="Foto Profil" class="profile-picture">
-                <h2>Ulfi Tamami</h2>
-                <p class="text-muted">example@email.com</p>
+      <section class="px-5 py-5">
+        <div class="container pt-5 mx-auto w-100 mw-100" style="margin-top: 3px;">
+            <div class="container ">
+                <div class="row justify-content-center">
+                    <!-- Profile Card -->
+                    <div class="col-md-4">
+                        <div class="card text-center p-3 h-100">
+                            <img src="{{ auth()->user()->image ? asset('storage/' . auth()->user()->image) : asset('assets/img/pp.jpeg') }}"
+                                class="rounded-circle mx-auto" width="120" height="120">
+                            <h4 class="mt-3 fw-bold text-dua">{{ auth()->user()->name }}</h4>
+                            <p class="text-muted fw-medium">{{ auth()->user()->email }}</p>
+                            <div class="d-flex justify-content-center">
+                                <button class="btn btn-secondary text-white w-100" data-bs-toggle="modal"
+                                    data-bs-target="#editProfileModal">
+                                    Edit Profil
+                                </button>
+                                <button class="btn btn-primary text-white w-100 ms-2" data-bs-toggle="modal"
+                                    data-bs-target="#changePasswordModal">
+                                    Ubah Kata Sandi
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Profile Details -->
+                    <div class="col-md-8">
+                        <div class="card p-4 h-100">
+                            <h4>Informasi Profil</h4>
+                            <ul class="list-group ">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-3"><strong>Nama</strong></div>
+                                        <div class="col-9">: {{ auth()->user()->name }}</div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-3"><strong>Email</strong></div>
+                                        <div class="col-9">:{{ auth()->user()->email }}</div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-3"><strong>Alamat</strong></div>
+                                        <div class="col-9">:{{ auth()->user()->address }}</div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-3"><strong>No Telepon</strong></div>
+                                        <div class="col-9">:{{ auth()->user()->phone }}</div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-3"><strong>Bergabung</strong></div>
+                                        <div class="col-9">:{{ auth()->user()->created_at->format('d M Y') }}</div>
+                                    </div>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                    {{-- End Profile Card --}}
+                  
+            </div>
+        
+          
+
+            <!-- Edit Profile Modal -->
+            <div class="modal fade" id="editProfileModal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Edit Profil</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            @method('PUT')
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label class="form-label">Avatar</label>
+                                    <input type="file" class="form-control" name="image">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Nama</label>
+                                    <input type="text" class="form-control" name="name"
+                                        value="{{ auth()->user()->name }}">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" name="email"
+                                        value="{{ auth()->user()->email }}">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Alamat</label>
+                                    <input type="text" class="form-control" name="address"
+                                        value="{{ auth()->user()->address }}">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">No Telepon</label>
+                                    <input type="text" class="form-control" name="phone"
+                                        value="{{ auth()->user()->phone }}">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
 
-            <div class="mb-3">
-                <label class="form-label fw-bold">Nama Lengkap</label>
-                <input type="text" class="form-control" value="Ulfi Tamami" disabled>
+            <!-- Change Password Modal -->
+            <div class="modal fade" id="changePasswordModal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Ubah Kata Sandi</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <form action="{{ route('profile.password') }}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label class="form-label">Kata Sandi Lama</label>
+                                    <input type="password" class="form-control" name="current_password">
+                                    @error('current_password')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Kata Sandi Baru</label>
+                                    <input type="password" class="form-control" name="new_password">
+                                    @error('new_password')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Konfirmasi Kata Sandi</label>
+                                    <input type="password" class="form-control" name="new_password_confirmation">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                <button type="submit" class="btn btn-danger">Perbarui</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-
-            <div class="mb-3">
-                <label class="form-label fw-bold">Email</label>
-                <input type="email" class="form-control" value="example@email.com" disabled>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label fw-bold">Nomor Telepon</label>
-                <input type="text" class="form-control" value="0812-3456-7890" disabled>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label fw-bold">Alamat Lengkap</label>
-                <textarea class="form-control" rows="3" disabled>Jl. Raya No. 123, Malang, Jawa Timur</textarea>
-            </div>
-
-            <a href="{{ url('/profil/edit') }}" class="btn btn-primary btn-edit">Edit Profil</a>
         </div>
-    </main>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @if (session('showModal'))
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var myModal = new bootstrap.Modal(document.getElementById("{{ session('showModal') }}"));
+                myModal.show();
+            });
+        </script>
+    @endif
+
+    @if (session('success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: '{{ session('success') }}',
+                showConfirmButton: false,
+                timer: 1700,
+                background: ' fff',
+                color: ' #114232',
+            });
+        </script>
+    @endif
 
     <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 

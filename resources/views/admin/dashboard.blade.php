@@ -86,7 +86,7 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Tables</span>
+            <span class="nav-link-text ms-1">Jadwal Perjalanan</span>
           </a>
         </li>
         <li class="nav-item">
@@ -127,7 +127,7 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Virtual Reality</span>
+            <span class="nav-link-text ms-1">Data Pelanggan</span>
           </a>
         </li>
         <li class="nav-item">
@@ -148,7 +148,7 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">RTL</span>
+            <span class="nav-link-text ms-1">Data Pesanan</span>
           </a>
         </li>
         <li class="nav-item mt-3">
@@ -172,7 +172,7 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Profile</span>
+            <span class="nav-link-text ms-1">Data Armada</span>
           </a>
         </li>
         <li class="nav-item">
@@ -192,7 +192,7 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Sign In</span>
+            <span class="nav-link-text ms-1">Driver</span>
           </a>
         </li>
         <li class="nav-item">
@@ -372,7 +372,7 @@
                       <h5 class="text-white font-weight-bolder mb-0 mt-3">
                         1600
                       </h5>
-                      <span class="text-white text-sm">Users Active</span>
+                      <span class="text-white text-sm">Pengguna Aktif</span>
                     </div>
                     <div class="col-4">
                       <div class="dropdown text-end mb-6">
@@ -403,7 +403,7 @@
                       <h5 class="text-white font-weight-bolder mb-0 mt-3">
                         357
                       </h5>
-                      <span class="text-white text-sm">Click Events</span>
+                      <span class="text-white text-sm">Total Pelanggan Harian</span>
                     </div>
                     <div class="col-4">
                       <div class="dropstart text-end mb-6">
@@ -436,7 +436,7 @@
                       <h5 class="text-white font-weight-bolder mb-0 mt-3">
                         2300
                       </h5>
-                      <span class="text-white text-sm">Purchases</span>
+                      <span class="text-white text-sm">Total Pelanggan Baru</span>
                     </div>
                     <div class="col-4">
                       <div class="dropdown text-end mb-6">
