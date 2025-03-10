@@ -68,7 +68,6 @@ class Kernel extends HttpKernel
     ];
 
     protected $routeMiddleware = [
-        // ...
         'auth' => \App\Http\Middleware\Authenticate::class, // Pastikan ini ada
         'admin' => \App\Http\Middleware\EnsureUserIsAdmin::class, // Middleware admin
     ];

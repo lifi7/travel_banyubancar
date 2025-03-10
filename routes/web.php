@@ -1,25 +1,24 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
-// Route::get('/sign-in', [AuthController::class, 'showLogin'])->name('login');
-// Route::post('/sign-in', [AuthController::class, 'login']);
-// Route::get('/sign-up', [AuthController::class, 'showRegister'])->name('register');
-// Route::post('/sign-up', [AuthController::class, 'register']);
-// Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-// Route::middleware(['auth', 'role:admin'])->group(function () {
-//     Route::get('/admin/dashboard', function () {
-//         return view('admin.dashboard'); // Sesuai dengan lokasi file di folder `admin`
-//     })->name('admin.dashboard');
-// });
+Route::get('/sign-up', [AuthController::class, 'showSignUpForm'])->name('signup');
+Route::post('/sign-up', [AuthController::class, 'signUp'])->name('signup.submit');
+Route::get('/sign-in', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/sign-in', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-// Route::middleware(['auth', 'role:user'])->group(function () {
-//     Route::get('/home', function () {
-//         return view('user.home');
-//     })->name('user.home');
-// });
+Route::get('/home', function () {
+    return view('user.home');
+})->middleware('auth')->name('user.home');
+
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard');
+})->middleware(['auth', 'admin'])->name('admin.dashboard');
 
 Route::get('/', function () {
     return view('landing_page');
@@ -45,9 +44,9 @@ Route::get('/sign-up', function () {
     return view('auth.sign-up');
 });
 
-Route::get('/home', function () {
-    return view('user.home');
-});
+// Route::get('/home', function () {
+//     return view('user.home');
+// });
 
 Route::get('/pemesanan', function () {
     return view('user.pemesanan');
@@ -65,17 +64,17 @@ Route::get('/form kirimbarang', function () {
     return view('user.form_kirimbarang');
 });
 
-Route::get('/e-ticket/{kode}', function ($kode) {
-    return view('user.e_ticket', [
-        'kode' => $kode,
-        'nama_pengirim' => 'Budi Santoso',
-        'nama_penerima' => 'Siti Aminah',
-        'alamat_pengirim' => 'Jl. Mawar No. 10, Malang',
-        'alamat_penerima' => 'Jl. Melati No. 20, Surabaya',
-        'tanggal' => '02 Maret 2025',
-        'waktu' => '06:00 Malang'
-    ]);
-});
+// Route::get('/e-ticket/{kode}', function ($kode) {
+//     return view('user.e_ticket', [
+//         'kode' => $kode,
+//         'nama_pengirim' => 'Budi Santoso',
+//         'nama_penerima' => 'Siti Aminah',
+//         'alamat_pengirim' => 'Jl. Mawar No. 10, Malang',
+//         'alamat_penerima' => 'Jl. Melati No. 20, Surabaya',
+//         'tanggal' => '02 Maret 2025',
+//         'waktu' => '06:00 Malang'
+//     ]);
+// });
 
 Route::get('/profil', function () {
     return view('user.profil', [
@@ -88,6 +87,10 @@ Route::get('/profil', function () {
 
 Route::get('/profil/edit', function () {
     return view('user.edit_profil');
+});
+
+Route::get('/e_ticket', function () {
+    return view('user.e_ticket');
 });
 
 Route::post('/profil/update', function () {
