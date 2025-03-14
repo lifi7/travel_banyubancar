@@ -21,15 +21,12 @@
             </div>
         </div>
     </section><!-- /Hero Section -->
-
     <!-- About Section -->
     <section id="about" class="about section">
-
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
             <h2>Tentang Kami</h2>
         </div><!-- End Section Title -->
-
         <div class="container">
 
             <div class="row gy-4">
@@ -49,9 +46,8 @@
             </div>
 
         </div>
-
     </section><!-- /About Section -->
- 
+
     <!-- Services Section -->
     <section id="services" class="services section light-background">
 
@@ -104,7 +100,6 @@
             </div>
 
         </div>
-
     </section><!-- /Services Section -->
 
     <!-- Layanan Section -->
@@ -298,7 +293,7 @@
         </div>
 
     </section><!-- /Faq 2 Section -->
-
+    
       <!-- Call To Action Section -->
       <section id="call-to-action" class="call-to-action section dark-background">
         <img src="assets/img/cta-bg.jpg" alt="">
@@ -314,9 +309,7 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    </section><!-- /Contact Section -->
+    </section><!-- Call To Action Section>
 
 </main>
 @endsection

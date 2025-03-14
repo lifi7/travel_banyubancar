@@ -10,11 +10,23 @@
             background-color: black;
             font-family: "Montserrat", "Helvetica Neue", "Open Sans", "Arial";
             font-weight: 300;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .container {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
+            align-items: center;
             flex-wrap: wrap;
             padding: 20px;
         }
@@ -41,7 +53,7 @@
         }
 
         .ticket-head {
-            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/bg_15.png);
+            background-image: url('assets/img/cta-bg.jpg');
             background-position: center;
             background-size: cover;
             border-radius: 4px 4px 0 0;
@@ -104,60 +116,91 @@
             color: #A2A2A2;
         }
 
-        .ticket-button {
-            display: block;
-            margin: 20px auto;
+        .button-group {
+            display: flex;
+            gap: 15px;
+            /* Memberi jarak antar tombol */
+            margin-top: 20px;
+        }
+
+        .back-button {
             padding: 10px 20px;
             font-size: 16px;
             font-weight: bold;
+            background: none;
+            color: blue;
+            border: 1px solid blue;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: blue;
             color: white;
-            background-color: #FF5722;
+        }
+
+        .ticket-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: #E64A19;
+            color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background 0.3s ease;
         }
 
         .ticket-button:hover {
-            background-color: #E64A19;
+            background-color: gray;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="ticket light">
-            <div class="ticket-head">AMS ✈ JFK</div>
-            <div class="ticket-body">
-                <div class="passenger">
-                    <p>Passenger</p>
-                    <h4>Michelle Doe</h4>
-                </div>
-                <div class="flight-info">
-                    <div>
-                        <p>Flight</p>
-                        <h4>NY341</h4>
+    <div class="wrapper">
+        <div class="container">
+            <div class="ticket light">
+                <div class="ticket-head">AMS ✈ JFK</div>
+                <div class="ticket-body">
+                    <div class="passenger">
+                        <p>Passenger</p>
+                        <h4>Michelle Doe</h4>
                     </div>
-                    <div>
-                        <p>Seat</p>
-                        <h4>14A</h4>
+                    <div class="flight-info">
+                        <div>
+                            <p>Flight</p>
+                            <h4>NY341</h4>
+                        </div>
+                        <div>
+                            <p>Seat</p>
+                            <h4>14A</h4>
+                        </div>
                     </div>
+                    <p class="flight-date">Jun-28-2017 at 08:30 AM</p>
+                    <div class="barcode"></div>
                 </div>
-                <p class="flight-date">Jun-28-2017 at 08:30 AM</p>
-                <div class="barcode"></div>
+                <div class="footer">Disclaimer: Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
             </div>
-            <div class="footer">Disclaimer: Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
         </div>
-    </div><button class="ticket-button" onclick="downloadImage()">Download Ticket</button>
+        <div class="button-group">
+            <button class="back-button" onclick="goBack()">&#8592;</button> <!-- Unicode untuk panah kiri -->
+            <button class="ticket-button" onclick="downloadImage()">Download Ticket</button>
+        </div>
+    </div>
 </body>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
     function downloadImage() {
         let ticket = document.querySelector(".ticket"); // Ambil elemen tiket
-        
-        html2canvas(ticket, { scale: 3 }).then(canvas => {
+
+        html2canvas(ticket, {
+            scale: 3
+        }).then(canvas => {
             let imgURL = canvas.toDataURL("image/png"); // Konversi ke PNG
             let a = document.createElement("a"); // Buat elemen <a>
             a.href = imgURL;

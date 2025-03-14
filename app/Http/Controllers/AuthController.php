@@ -23,9 +23,9 @@ class AuthController extends Controller
 
             if (Auth::user()->role === 'admin') {
                 return redirect()->route('admin.dashboard');
+            } else {
+                return redirect()->route('user.home');
             }
-
-            return redirect()->route('user.home');
         }
 
         return back()->withErrors([
@@ -51,7 +51,7 @@ class AuthController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => 'user', 
+            'role' => 'user',
         ]);
 
         // Redirect ke halaman login dengan pesan sukses

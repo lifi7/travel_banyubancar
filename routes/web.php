@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-
+use App\Http\Controllers\ProfileController;
 
 Route::get('/sign-up', [AuthController::class, 'showSignUpForm'])->name('signup');
 Route::post('/sign-up', [AuthController::class, 'signUp'])->name('signup.submit');
@@ -18,84 +18,50 @@ Route::get('/home', function () {
 
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
-})->middleware(['auth', 'admin'])->name('admin.dashboard');
+});
+// })->middleware(['auth', 'admin'])->name('admin.dashboard');
 
 Route::get('/', function () {
     return view('landing_page');
 });
 
-// Route::get('/admin/dashboard', function () {
-//     return view('admin.dashboard');
-// });
-
 Route::get('/admin/profile', function () {
     return view('admin.profile');
+});
+
+Route::get('/user/profile', function () {
+    return view('user.profile');
 });
 
 Route::get('/admin/rtl', function () {
     return view('admin.rtl');
 });
 
-Route::get('/sign-in', function () {
-    return view('auth.sign-in');
-})->name('login');
-
-Route::get('/sign-up', function () {
-    return view('auth.sign-up');
-});
-
-// Route::get('/home', function () {
-//     return view('user.home');
-// });
-
 Route::get('/pemesanan', function () {
     return view('user.pemesanan');
 });
 
-Route::get('/riwayat pemesanan', function () {
-    return view('user.riwayat_pemesanan');
+Route::get('/riwayatpemesanan', function () {
+    return view('user.riwayatpemesanan');
 });
 
-Route::get('/form travel', function () {
-    return view('user.form_travel');
+Route::get('/riwayatpemesanantravel', function () {
+    return view('user.riwayatpemesanantravel');
 });
 
-Route::get('/form kirimbarang', function () {
-    return view('user.form_kirimbarang');
-});
-
-// Route::get('/e-ticket/{kode}', function ($kode) {
-//     return view('user.e_ticket', [
-//         'kode' => $kode,
-//         'nama_pengirim' => 'Budi Santoso',
-//         'nama_penerima' => 'Siti Aminah',
-//         'alamat_pengirim' => 'Jl. Mawar No. 10, Malang',
-//         'alamat_penerima' => 'Jl. Melati No. 20, Surabaya',
-//         'tanggal' => '02 Maret 2025',
-//         'waktu' => '06:00 Malang'
-//     ]);
-// });
-
-Route::get('/profil', function () {
-    return view('user.profil', [
-        'nama' => 'Ulfi Tamami',
-        'email' => 'ulfi@example.com',
-        'nomor_hp' => '08123456789',
-        'alamat' => 'Jl. Mawar No. 10, Malang'
-    ]);
-});
-
-Route::get('/profil/edit', function () {
-    return view('user.edit_profil');
-});
-
-Route::get('/e_ticket', function () {
+Route::get('/ticket', function () {
     return view('user.e_ticket');
 });
 
-Route::post('/profil/update', function () {
-    return redirect('/profil')->with('success', 'Profil berhasil diperbarui!');
+Route::get('/berita', function () {
+    return view('user.berita');
 });
+
+Route::get('/profile', function () {
+    return view('user.profil');
+})->middleware('auth');
+
+Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 
 
 
