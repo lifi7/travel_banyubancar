@@ -16,4 +16,8 @@ class EnsureUserIsAdmin
 
         return redirect('/home')->with('error', 'You do not have access to this page.');
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> fitur-tertinggal
