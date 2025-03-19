@@ -14,12 +14,6 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->enum('role', ['user', 'admin'])->default('user');
-<<<<<<<< HEAD:database/migrations/2025_03_05_125117_create_users_table.php
-            $table->string('phone', 15)->nullable();
-            $table->text('address')->nullable();
-            $table->string('image')->nullable();
-========
->>>>>>>> fitur-tertinggal:database/migrations/2025_03_03_125741_create_users_table.php
             $table->rememberToken();
             $table->timestamps();
         });
