@@ -19,7 +19,7 @@ Route::get('/home', function () {
 
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
-})->middleware(['auth', 'admin'])->name('admin.dashboard');
+});
 
 Route::get('/', function () {
     return view('landing_page');
@@ -40,6 +40,10 @@ Route::get('/pemesanan', function () {
 
 Route::get('/riwayatpemesanan', function () {
     return view('user.riwayatpemesanan');
+});
+
+Route::get('/form_travel', function () {
+    return view('user.form_travel');
 });
 
 Route::get('/riwayatpemesanantravel', function () {

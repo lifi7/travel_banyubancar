@@ -70,39 +70,67 @@
             </div><!-- End Section Title -->
 
             <div class="container">
-
                 <table class="table">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">Kode Pemesanan</th>
+                            <th scope="col">Nama Pemesan</th>
+                            <th scope="col">Rute Perjalanan</th>
+                            <th scope="col">Jumlah Tiket</th>
+                            <th scope="col">Status Pembayaran</th>
+                            <th scope="col">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <td>TRV12345</td>
+                            <td>Mark Otto</td>
+                            <td>Malang → Gresik</td>
+                            <td>2</td>
+                            <td><span class="badge bg-success">Lunas</span></td>
+                            <td><a href="#" class="btn btn-primary btn-sm">Lihat E-Ticket</a></td>
                         </tr>
                         <tr>
                             <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
+                            <td>TRV67890</td>
+                            <td>Jacob Thornton</td>
+                            <td>Gresik → Lamongan</td>
+                            <td>1</td>
+                            <td><span class="badge bg-warning">Belum Lunas</span></td>
+                            <td><a href="#" class="btn btn-primary btn-sm">Lihat E-Ticket</a></td>
                         </tr>
                         <tr>
                             <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
+                            <td>TRV11223</td>
+                            <td>Larry Bird</td>
+                            <td>Lamongan → Tuban</td>
+                            <td>3</td>
+                            <td><span class="badge bg-success">Lunas</span></td>
+                            <td><a href="#" class="btn btn-primary btn-sm">Lihat E-Ticket</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>TRV44556</td>
+                            <td>Rina Aulia</td>
+                            <td>Tuban → Malang</td>
+                            <td>2</td>
+                            <td><span class="badge bg-danger">Dibatalkan</span></td>
+                            <td><a href="#" class="btn btn-secondary btn-sm disabled">Lihat E-Ticket</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>TRV78901</td>
+                            <td>Ahmad Fauzan</td>
+                            <td>Malang → Tuban</td>
+                            <td>1</td>
+                            <td><span class="badge bg-warning">Belum Lunas</span></td>
+                            <td><a href="#" class="btn btn-primary btn-sm">Lihat E-Ticket</a></td>
                         </tr>
                     </tbody>
                 </table>
-
-            </div>
+            </div>                
 
         </section><!-- /Team Section -->
 

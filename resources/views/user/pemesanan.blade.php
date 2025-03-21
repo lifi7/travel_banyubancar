@@ -105,7 +105,7 @@
                 <li><i class="bi bi-check"></i> <span>Penjemputan area Malang yaitu Rampal, Sulfat, Sawojajar, Suhat, Pakis, Wendit, Arjosari</span></li>
                 <li><i class="bi bi-check"></i> <span>Kapasitas Armada 8-12 penumpang</span></li>
               </ul>
-              <a href="{{ url('/form travel') }}" class="buy-btn">Pesan</a>
+              <a href="{{ url('/form_travel') }}" class="buy-btn">Pesan</a>
             </div>
           </div><!-- End Pricing Item -->
 
@@ -118,7 +118,7 @@
                 <li><i class="bi bi-check"></i> <span>Penjemputan area Malang yaitu Rampal, Sulfat, Sawojajar, Suhat, Pakis, Wendit, Arjosari</span></li>
                 <li><i class="bi bi-check"></i> <span>Kapasitas Armada 8-12 penumpang</span></li>
               </ul>
-              <a href="{{ url('/form travel') }}" class="buy-btn">Pesan</a>
+              <a href="{{ url('/form_travel') }}" class="buy-btn">Pesan</a>
             </div>
           </div><!-- End Pricing Item -->
 
@@ -131,7 +131,7 @@
                 <li><i class="bi bi-check"></i> <span>Penjemputan area Malang yaitu Rampal, Sulfat, Sawojajar, Suhat, Pakis, Wendit, Arjosari</span></li>
                 <li><i class="bi bi-check"></i> <span>Kapasitas Armada 8-12 penumpang</span></li>
               </ul>
-              <a href="{{ url('/form travel') }}" class="buy-btn">Pesan</a>
+              <a href="{{ url('/form_travel') }}" class="buy-btn">Pesan</a>
             </div>
           </div><!-- End Pricing Item -->
 
@@ -144,7 +144,7 @@
                 <li><i class="bi bi-check"></i> <span>Penjemputan area Malang yaitu Rampal, Sulfat, Sawojajar, Suhat, Pakis, Wendit, Arjosari</span></li>
                 <li><i class="bi bi-check"></i> <span>Kapasitas Armada 8-12 penumpang</span></li>
               </ul>
-              <a href="{{ url('/form travel') }}" class="buy-btn">Pesan</a>
+              <a href="{{ url('/form_travel') }}" class="buy-btn">Pesan</a>
             </div>
           </div><!-- End Pricing Item -->
 
@@ -176,7 +176,7 @@
                       <li><i class="bi bi-check"></i> <span>Penjemputan area Malang yaitu Rampal, Sulfat, Sawojajar, Suhat, Pakis, Wendit, Arjosari</span></li>
                       <li><i class="bi bi-check"></i> <span>Kapasitas Armada 8-12 penumpang</span></li>
                     </ul>
-                    <a href="{{ url('/form kirimbarang') }}" class="buy-btn">Pesan</a>
+                    <a href="{{ url('/from_travel kirimbarang') }}" class="buy-btn">Pesan</a>
                   </div>
                 </div><!-- End Pricing Item -->
       
@@ -189,7 +189,7 @@
                       <li><i class="bi bi-check"></i> <span>Penjemputan area Malang yaitu Rampal, Sulfat, Sawojajar, Suhat, Pakis, Wendit, Arjosari</span></li>
                       <li><i class="bi bi-check"></i> <span>Kapasitas Armada 8-12 penumpang</span></li>
                     </ul>
-                    <a href="{{ url('/form kirimbarang') }}" class="buy-btn">Pesan</a>
+                    <a href="{{ url('/from_travel kirimbarang') }}" class="buy-btn">Pesan</a>
                   </div>
                 </div><!-- End Pricing Item -->
       
@@ -202,7 +202,7 @@
                       <li><i class="bi bi-check"></i> <span>Penjemputan area Malang yaitu Rampal, Sulfat, Sawojajar, Suhat, Pakis, Wendit, Arjosari</span></li>
                       <li><i class="bi bi-check"></i> <span>Kapasitas Armada 8-12 penumpang</span></li>
                     </ul>
-                    <a href="{{ url('/form kirimbarang') }}" class="buy-btn">Pesan</a>
+                    <a href="{{ url('/from_travel kirimbarang') }}" class="buy-btn">Pesan</a>
                   </div>
                 </div><!-- End Pricing Item -->
       
@@ -215,7 +215,7 @@
                       <li><i class="bi bi-check"></i> <span>Penjemputan area Malang yaitu Rampal, Sulfat, Sawojajar, Suhat, Pakis, Wendit, Arjosari</span></li>
                       <li><i class="bi bi-check"></i> <span>Kapasitas Armada 8-12 penumpang</span></li>
                     </ul>
-                    <a href="{{ url('/form kirimbarang') }}" class="buy-btn">Pesan</a>
+                    <a href="{{ url('/from_travel kirimbarang') }}" class="buy-btn">Pesan</a>
                   </div>
                 </div><!-- End Pricing Item -->
       
@@ -235,8 +235,8 @@
         <div class="credits">
             <!-- All the links in the footer should remain intact. -->
             <!-- You can delete the links only if you've purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+            <!-- Licensing infrom_travelation: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact from_travel: [buy-url] -->
             Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
         </div>
     </div>
@@ -251,7 +251,7 @@
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/php-email-from_travel/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
