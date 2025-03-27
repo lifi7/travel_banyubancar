@@ -19,7 +19,11 @@ Route::get('/home', function () {
 
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
-});
+})->name('dashboard');
+
+Route::get('/admin/data-pelanggan', function () {
+    return view('admin.data_pelanggan');
+})->name('pelanggan');
 
 Route::get('/', function () {
     return view('landing_page');
@@ -29,9 +33,13 @@ Route::get('/admin/profile', function () {
     return view('admin.profile');
 });
 
-Route::get('/admin/rtl', function () {
-    return view('admin.rtl');
+Route::get('/admin/billing', function () {
+    return view('admin.billing');
 });
+
+Route::get('/admin/jadwalperjalanan', function () {
+    return view('admin.jadwal_perjalanan');
+})->name('jadwal');
 
 Route::get('/pemesanan', function () {
     return view('user.pemesanan');

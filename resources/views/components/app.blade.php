@@ -39,10 +39,11 @@
 </head>
 
 <body class="index-page">
+        
     @include('components.header1')
 
     @yield('content')
-
+    @include('components.footer')
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
 

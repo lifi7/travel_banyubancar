@@ -1,3 +1,4 @@
+@guest
 <footer id="footer" class="footer">
     <div class="container footer-top">
         <div class="row gy-4">
@@ -47,7 +48,15 @@
     <div class="container text-center mt-4">
         <p>© <span>Copyright</span> <strong class="px-1 sitename">TravelBanyuBancar</strong> <span>All Rights Reserved</span>
     </div>
+</footer>   
+@endguest
+@auth
+<footer id="footer" class="footer py-4">
+    <div class="container text-center mt-4">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">TravelBanyuBancar</strong> <span>All Rights Reserved</span>
+    </div>
 </footer>
+@endauth
 
 <!-- Scroll Top -->
 <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
