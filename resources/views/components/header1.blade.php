@@ -13,7 +13,7 @@
                 <li><a href="#hero" class="active">Beranda</a></li>
                 <li><a href="#services">Cara Pemesanan</a></li>
                 <li><a href="#pricing">Jadwal Perjalanan</a></li>
-                <li><a href="#" class="btn btnprimary px-3 py-2 rounded-pill">Login</a></li>
+                <li><a href="{{ route('login') }}" class="btn btnprimary px-3 py-2 rounded-pill">Login</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>

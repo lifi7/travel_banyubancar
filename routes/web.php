@@ -33,13 +33,18 @@ Route::get('/admin/profile', function () {
     return view('admin.profile');
 });
 
-Route::get('/admin/billing', function () {
-    return view('admin.billing');
-});
+Route::get('/admin/data-pemesanan', function () {
+    return view('admin.pemesanan');
+})->name('data-pemesanan');
 
 Route::get('/admin/jadwalperjalanan', function () {
     return view('admin.jadwal_perjalanan');
 })->name('jadwal');
+
+Route::post('/admin/editjadwal/storeOrUpdate', function () {
+    // Proses penyimpanan atau pembaruan jadwal di sini
+    return redirect()->route('jadwal'); // Kembali ke halaman jadwal setelah submit
+})->name('jadwal.storeOrUpdate');
 
 Route::get('/pemesanan', function () {
     return view('user.pemesanan');
