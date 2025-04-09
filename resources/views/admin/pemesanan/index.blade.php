@@ -170,151 +170,160 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-7 mt-4">
-        <div class="card">
-          <div class="card-header pb-0 px-3">
-            <h6 class="mb-0">Billing Information</h6>
-          </div>
-          <div class="card-body pt-4 p-3">
-            <ul class="list-group">
-              <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
-                <div class="d-flex flex-column">
-                  <h6 class="mb-3 text-sm">Oliver Liam</h6>
-                  <span class="mb-2 text-xs">Company Name: <span class="text-dark font-weight-bold ms-sm-2">Viking Burrito</span></span>
-                  <span class="mb-2 text-xs">Email Address: <span class="text-dark ms-sm-2 font-weight-bold">oliver@burrito.com</span></span>
-                  <span class="text-xs">VAT Number: <span class="text-dark ms-sm-2 font-weight-bold">FRB1235476</span></span>
-                </div>
-                <div class="ms-auto text-end">
-                  <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Delete</a>
-                  <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
-                </div>
-              </li>
-              <li class="list-group-item border-0 d-flex p-4 mb-2 mt-3 bg-gray-100 border-radius-lg">
-                <div class="d-flex flex-column">
-                  <h6 class="mb-3 text-sm">Lucas Harper</h6>
-                  <span class="mb-2 text-xs">Company Name: <span class="text-dark font-weight-bold ms-sm-2">Stone Tech Zone</span></span>
-                  <span class="mb-2 text-xs">Email Address: <span class="text-dark ms-sm-2 font-weight-bold">lucas@stone-tech.com</span></span>
-                  <span class="text-xs">VAT Number: <span class="text-dark ms-sm-2 font-weight-bold">FRB1235476</span></span>
-                </div>
-                <div class="ms-auto text-end">
-                  <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Delete</a>
-                  <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
-                </div>
-              </li>
-              <li class="list-group-item border-0 d-flex p-4 mb-2 mt-3 bg-gray-100 border-radius-lg">
-                <div class="d-flex flex-column">
-                  <h6 class="mb-3 text-sm">Ethan James</h6>
-                  <span class="mb-2 text-xs">Company Name: <span class="text-dark font-weight-bold ms-sm-2">Fiber Notion</span></span>
-                  <span class="mb-2 text-xs">Email Address: <span class="text-dark ms-sm-2 font-weight-bold">ethan@fiber.com</span></span>
-                  <span class="text-xs">VAT Number: <span class="text-dark ms-sm-2 font-weight-bold">FRB1235476</span></span>
-                </div>
-                <div class="ms-auto text-end">
-                  <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Delete</a>
-                  <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-5 mt-4">
-        <div class="card h-100 mb-4">
-          <div class="card-header pb-0 px-3">
-            <div class="row">
-              <div class="col-md-6">
-                <h6 class="mb-0">Your Transaction's</h6>
+      <div class="py-4">
+        <div class="row">
+          <div class="col-12">
+            <div class="card mb-4">
+              <div class="card-header pb-0 d-flex justify-content-between align-items-center">
+                <h6>Pemesanan</h6>
+                <a class="btn bg-gradient-warning mb-0" href="{{ route('jadwals.create') }}">
+                  <i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah Pesanan
+                </a>              
               </div>
-              <div class="col-md-6 d-flex justify-content-end align-items-center">
-                <i class="far fa-calendar-alt me-2"></i>
-                <small>23 - 30 March 2020</small>
+              <div class="card-body px-0 pt-0 pb-2">
+                <div class="table-responsive p-0">
+                  <table class="table align-items-center mb-0">
+                    <thead>
+                      <tr>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Foto</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Pemesan</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Kode Tiket</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Rute</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tanggal Keberangkatan</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tarif</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="d-flex px-2 py-1">
+                            <div>
+                              <img src="../assets/img/team-3.jpg" class="avatar avatar-sm me-3" alt="foto-pemesan">
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <h6 class="mb-0 text-sm">Ulfi Tamami</h6>
+                          <p class="text-xs text-secondary mb-0">ulfi@example.com</p>
+                        </td>
+                        <td>
+                          <span class="text-xs font-weight-bold">TRVL123456</span>
+                        </td>
+                        <td>
+                          <span class="text-xs font-weight-bold">Lamongan - Malang</span><br>
+                          <span class="text-xs text-secondary">Berangkat dari Tuban</span>
+                        </td>
+                        <td>
+                          <span class="text-xs font-weight-bold">10 April 2025 - 07:00 WIB</span>
+                        </td>
+                        <td>
+                          <span class="text-secondary text-xs font-weight-bold">Rp.145.000,00</span>
+                        </td>
+                        <td>
+                          <span class="badge badge-sm bg-gradient-success">Dibayar</span>
+                        </td>
+                      </tr>
+        
+                      <tr>
+                        <td>
+                          <div class="d-flex px-2 py-1">
+                            <div>
+                              <img src="../assets/img/team-4.jpg" class="avatar avatar-sm me-3" alt="foto-pemesan">
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <h6 class="mb-0 text-sm">Michael Levi</h6>
+                          <p class="text-xs text-secondary mb-0">michaellevi@example.com</p>
+                        </td>
+                        <td>
+                          <span class="text-xs font-weight-bold">TRVL789012</span>
+                        </td>
+                        <td>
+                          <span class="text-xs font-weight-bold">Tuban - Gresik</span><br>
+                          <span class="text-xs text-secondary">Berangkat dari Terminal Bungurasih</span>
+                        </td>
+                        <td>
+                          <span class="text-xs font-weight-bold">12 April 2025 - 09:30 WIB</span>
+                        </td>
+                        <td>
+                          <span class="text-secondary text-xs font-weight-bold">Rp.165.000,00</span>
+                        </td>
+                        <td>
+                          <span class="badge badge-sm bg-gradient-warning">Belum Dibayar</span>
+                        </td>
+                      </tr>
+  
+                      <tr>
+                        <td>
+                          <div class="d-flex px-2 py-1">
+                            <div>
+                              <img src="../assets/img/team-3.jpg" class="avatar avatar-sm me-3" alt="foto-pemesan">
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <h6 class="mb-0 text-sm">Ulfi Tamami</h6>
+                          <p class="text-xs text-secondary mb-0">ulfi@example.com</p>
+                        </td>
+                        <td>
+                          <span class="text-xs font-weight-bold">TRVL123456</span>
+                        </td>
+                        <td>
+                          <span class="text-xs font-weight-bold">Lamongan - Malang</span><br>
+                          <span class="text-xs text-secondary">Berangkat dari Tuban</span>
+                        </td>
+                        <td>
+                          <span class="text-xs font-weight-bold">10 April 2025 - 07:00 WIB</span>
+                        </td>
+                        <td>
+                          <span class="text-secondary text-xs font-weight-bold">Rp.145.000,00</span>
+                        </td>
+                        <td>
+                          <span class="badge badge-sm bg-gradient-success">Dibayar</span>
+                        </td>
+                      </tr>
+  
+                      <tr>
+                        <td>
+                          <div class="d-flex px-2 py-1">
+                            <div>
+                              <img src="../assets/img/team-4.jpg" class="avatar avatar-sm me-3" alt="foto-pemesan">
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <h6 class="mb-0 text-sm">Alexa Liras</h6>
+                          <p class="text-xs text-secondary mb-0">alexaliras@example.com</p>
+                        </td>
+                        <td>
+                          <span class="text-xs font-weight-bold">TRVL789012</span>
+                        </td>
+                        <td>
+                          <span class="text-xs font-weight-bold">Tuban - Gresik</span><br>
+                          <span class="text-xs text-secondary">Berangkat dari Terminal Bungurasih</span>
+                        </td>
+                        <td>
+                          <span class="text-xs font-weight-bold">12 April 2025 - 09:30 WIB</span>
+                        </td>
+                        <td>
+                          <span class="text-secondary text-xs font-weight-bold">Rp.165.000,00</span>
+                        </td>
+                        <td>
+                          <span class="badge badge-sm bg-gradient-warning">Belum Dibayar</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
-          <div class="card-body pt-4 p-3">
-            <h6 class="text-uppercase text-body text-xs font-weight-bolder mb-3">Newest</h6>
-            <ul class="list-group">
-              <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                <div class="d-flex align-items-center">
-                  <button class="btn btn-icon-only btn-rounded btn-outline-danger mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i class="fas fa-arrow-down"></i></button>
-                  <div class="d-flex flex-column">
-                    <h6 class="mb-1 text-dark text-sm">Netflix</h6>
-                    <span class="text-xs">27 March 2020, at 12:30 PM</span>
-                  </div>
-                </div>
-                <div class="d-flex align-items-center text-danger text-gradient text-sm font-weight-bold">
-                  - $ 2,500
-                </div>
-              </li>
-              <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                <div class="d-flex align-items-center">
-                  <button class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i class="fas fa-arrow-up"></i></button>
-                  <div class="d-flex flex-column">
-                    <h6 class="mb-1 text-dark text-sm">Apple</h6>
-                    <span class="text-xs">27 March 2020, at 04:30 AM</span>
-                  </div>
-                </div>
-                <div class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold">
-                  + $ 2,000
-                </div>
-              </li>
-            </ul>
-            <h6 class="text-uppercase text-body text-xs font-weight-bolder my-3">Yesterday</h6>
-            <ul class="list-group">
-              <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                <div class="d-flex align-items-center">
-                  <button class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i class="fas fa-arrow-up"></i></button>
-                  <div class="d-flex flex-column">
-                    <h6 class="mb-1 text-dark text-sm">Stripe</h6>
-                    <span class="text-xs">26 March 2020, at 13:45 PM</span>
-                  </div>
-                </div>
-                <div class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold">
-                  + $ 750
-                </div>
-              </li>
-              <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                <div class="d-flex align-items-center">
-                  <button class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i class="fas fa-arrow-up"></i></button>
-                  <div class="d-flex flex-column">
-                    <h6 class="mb-1 text-dark text-sm">HubSpot</h6>
-                    <span class="text-xs">26 March 2020, at 12:30 PM</span>
-                  </div>
-                </div>
-                <div class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold">
-                  + $ 1,000
-                </div>
-              </li>
-              <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                <div class="d-flex align-items-center">
-                  <button class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i class="fas fa-arrow-up"></i></button>
-                  <div class="d-flex flex-column">
-                    <h6 class="mb-1 text-dark text-sm">Creative Tim</h6>
-                    <span class="text-xs">26 March 2020, at 08:30 AM</span>
-                  </div>
-                </div>
-                <div class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold">
-                  + $ 2,500
-                </div>
-              </li>
-              <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                <div class="d-flex align-items-center">
-                  <button class="btn btn-icon-only btn-rounded btn-outline-dark mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i class="fas fa-exclamation"></i></button>
-                  <div class="d-flex flex-column">
-                    <h6 class="mb-1 text-dark text-sm">Webflow</h6>
-                    <span class="text-xs">26 March 2020, at 05:00 AM</span>
-                  </div>
-                </div>
-                <div class="d-flex align-items-center text-dark text-sm font-weight-bold">
-                  Pending
-                </div>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>
+  
     <footer class="footer pt-3  ">
       <div class="container-fluid">
         <div class="row align-items-center justify-content-lg-between">

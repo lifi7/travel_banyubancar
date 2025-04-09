@@ -10,6 +10,9 @@
           <div class="card mb-4">
             <div class="card-header pb-0">
               <h6>Jadwal Perjalanan</h6>
+              <a class="btn bg-gradient-warning mb-0" href="{{ route('jadwals.create') }}">
+                <i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah Jadwal
+              </a>              
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">

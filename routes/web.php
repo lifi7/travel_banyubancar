@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DriverController;
 
 
 Route::get('/sign-up', [AuthController::class, 'showSignUpForm'])->name('signup');
@@ -22,7 +24,7 @@ Route::get('/admin/dashboard', function () {
 })->name('dashboard');
 
 Route::get('/admin/data-pelanggan', function () {
-    return view('admin.data_pelanggan');
+    return view('admin.data_pelanggan.index');
 })->name('pelanggan');
 
 Route::get('/', function () {
@@ -34,17 +36,20 @@ Route::get('/admin/profile', function () {
 });
 
 Route::get('/admin/data-pemesanan', function () {
-    return view('admin.pemesanan');
+    return view('admin.pemesanan.index');
 })->name('data-pemesanan');
 
-Route::get('/admin/jadwalperjalanan', function () {
-    return view('admin.jadwal_perjalanan');
-})->name('jadwal');
+Route::get('/admin/data-armada', function () {
+    return view('admin.data_armada.index');
+})->name('armada');
 
-Route::post('/admin/editjadwal/storeOrUpdate', function () {
-    // Proses penyimpanan atau pembaruan jadwal di sini
-    return redirect()->route('jadwal'); // Kembali ke halaman jadwal setelah submit
-})->name('jadwal.storeOrUpdate');
+// Route::get('/admin/jadwalperjalanan', function () {
+    // return view('admin.jadwal_perjalanan');
+// })->name('jadwal');
+
+Route::resource('admin/jadwals', JadwalController::class);
+
+Route::resource('admin/drivers', DriverController::class);
 
 Route::get('/pemesanan', function () {
     return view('user.pemesanan');
